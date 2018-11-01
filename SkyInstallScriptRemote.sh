@@ -109,13 +109,13 @@ sudo mkdir ~/.ssh/
 sudo touch ~/.ssh/known_hosts
 
 ###### Scan and add keys to trusted list
-ssh-keyscan -H 192.168.178.102 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.178.103 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.178.104 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.178.105 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.178.106 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.178.107 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.178.108 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.102 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.103 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.104 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.105 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.106 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.107 >> ~/.ssh/known_hosts
+#ssh-keyscan -H 192.168.178.108 >> ~/.ssh/known_hosts
 
 ###### In order to automatically install OrangePI 2-8 we need to login via SSH and run the SkyInstallScript...
 ###### ... for secondory boards.
