@@ -6,7 +6,7 @@
 ##### AS A PART OF SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT
 ##### This script starts the Skycoin wallet again after a shutdown or reboot automatically.
 #######################################################################################################################################################################
-##### Version:		1.0  - Get the newest version at https://github.com/TheSKYpeople/SkyInstallScript
+##### Version:		1.0  - Get the newest version at https://github.com/dobby/SkyInstallScript
 #######################################################################################################################################################################
 ##### Team:			  The SKYpeople (Email: TheSKYpeople@protonmail.com - Telegram: @TheSKYpeople)
 ##### Licence:		GNU General Public License v3.0

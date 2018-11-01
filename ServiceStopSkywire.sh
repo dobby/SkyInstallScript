@@ -4,7 +4,7 @@
 ##### SKYWIRE SERVICES STOP SCRIPT
 ##### This script stops all Skywire services. They can be restarted with the start script.
 #######################################################################################################################################################################
-##### Version:		1.0  - Get the newest version at https://github.com/TheSKYpeople/SkyInstallScript
+##### Version:		1.0  - Get the newest version at https://github.com/dobby/SkyInstallScript
 #######################################################################################################################################################################
 ##### Team:			  The SKYpeople (Email: TheSKYpeople@protonmail.com - Telegram: @TheSKYpeople)
 ##### Licence:		GNU General Public License v3.0

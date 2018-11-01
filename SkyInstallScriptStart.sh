@@ -8,7 +8,7 @@
 ##### For more detailed instructions please consult our tutorial.
 ##### For further assistence feel free to contact us! 
 #######################################################################################################################################################################
-##### Version:		1.0  - Get the newest version at https://github.com/TheSKYpeople/SkyInstallScript
+##### Version:		1.0  - Get the newest version at https://github.com/dobby/SkyInstallScript
 #######################################################################################################################################################################
 ##### Team:			       The SKYpeople (Email: TheSKYpeople@protonmail.com - Telegram: @TheSKYpeople)
 ##### Licence:		     GNU General Public License v3.0
@@ -135,7 +135,7 @@ cd $GOPATH/bin
 ###### This line is to start the monitor on the master node (OrangePI 1) only / Other Orange PIs requiere a different line with the master nodes IP!!!
 ./node -connect-manager -manager-address :5998 -manager-web :8000 -discovery-address messenger.skycoin.net:5999 -address :5000 -web-port :6001 &> /dev/null 2>&1 &
 echo "Skywire monitor started." 
-echo "You can now open the monitor in your browser: http://192.168.0.101:8000"
+echo "You can now open the monitor in your browser: http://192.168.178.101:8000"
 sleep 10
 
 
@@ -143,14 +143,14 @@ sleep 10
 ###### Download start / stop scripts
 echo "Downloading autostart scripts from TheSKYpeople Github" 
 cd ~
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStartSkycoinWallet.sh
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStartSkywirePrimary.sh
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStopSkywire.sh
+wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStartSkycoinWallet.sh
+wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStartSkywirePrimary.sh
+wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStopSkywire.sh
 
 ##### Executing InstallScript Part 2 (SkyInstallScriptRemote.sh) for installation of OrangePI 2-8 via SSH
 ###### Downloading Part 2
 cd ~
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/SkyInstallScriptRemote.sh
+wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptRemote.sh
 ###### Changing permissions 
 chmod 755 SkyInstallScriptRemote.sh
 ###### Execute Part 2

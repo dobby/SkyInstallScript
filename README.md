@@ -1,4 +1,4 @@
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/banner.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/banner.JPG "")
 # SkyInstallScript
 Automatic installation script for Skyminers / Skycoin node
 
@@ -11,13 +11,13 @@ https://downloads.skycoin.net/skywire/Skywire_Miner_Assembly_Manual_2_1.pdf
 
 # Other Languages
 Este tutorial también está disponible en español:
-https://github.com/TheSKYpeople/SkyInstallScript/raw/master/tutorial/C%C3%B3mo%20instalar%20un%20skyminer%20autom%C3%A1ticamente%20usando%20SkyInstallScript.pdf
+https://github.com/dobby/SkyInstallScript/raw/master/tutorial/C%C3%B3mo%20instalar%20un%20skyminer%20autom%C3%A1ticamente%20usando%20SkyInstallScript.pdf
 
 Dieses Tutorial ist auch auf Deutsch verfügbar: Folgt in Kürze
 
 # Preparations for Installation
 The following tutorial is also availabe as PDF for download:
-https://github.com/TheSKYpeople/SkyInstallScript/raw/master/tutorial/How%20to%20install%20a%20Skyminer%20automatically%20using%20SkyInstallScript.pdf
+https://github.com/dobby/SkyInstallScript/raw/master/tutorial/How%20to%20install%20a%20Skyminer%20automatically%20using%20SkyInstallScript.pdf
 
 ## Downloads
 
@@ -108,22 +108,22 @@ Ready? Let’s go 😊
 
 1.	Unzip the downloaded Armbian 7zip archive using 7zip. 
 To do so right click on the archive, select 7-zip and then unzip to... 
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut6.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut6.JPG "")
 2.	As a result, we get a new folder containing the file we going to need to flash the SD card with Etcher. It’s a .iso file. 
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut7.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut7.JPG "")
 3.	Now open Etcher and click on “Select image”.
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut8.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut8.JPG "")
 4.	Select the Armbian .iso image (highlighed in yellow above) and click “Open”. 
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut9.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut9.JPG "")
 5.	Insert the first microSD card into your computers SD Card reader. In most cases you will need an adaptor for that as shown below (SD or USB both work fine). 
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut10.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut10.JPG "")
 6.	Now we need to select the drive of the microSD card. Sometimes the card gets selected automatically when it’s the only one connected to the PC.
 Attention! Be careful and select the right drive. If you accidently select a wrong drive you completely erase all its data. 
 To prevent this rather unplug all other memory cards, USB sticks and external hard drives first (if possible).
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut11.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut11.JPG "")
 7.	Perfect now we are good to go. Press the “Flash!” button and lets flash 😊.
 8.	When you see the picture below the first card is successfully flashed. If something went south, please feel free to contact as for assistance. 
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut12.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut12.JPG "")
 
 9.	Now repeat the same with the other 7 microSD cards.
 10.	Well done! Let’s take your awesome Skyminer and 4 of the 8 flashed microSD cards and insert the 4 cards to the top row of Orange PI’s. 
@@ -135,15 +135,15 @@ You might think now why only 4 and only the top ones? Simple answer we need an H
    * Use a comman network switch or hub and disconnect on OrangePI from the miners switch. Then plug in the ethernet cable from the workstation to the switch and also plug the ethernet from the disconnected OrangePI into the switch. After that plug another ethernet cable into the switch/hub and connect it with the miners switch.
    * If you don't have a switch/hub at hand disconnect one OrangePI and continue with the following installation steps. We provide an additional script later in this tutorial to install the disconnected board after the installation of the other OrangePI's is finished. As  soon as you have disconnected one board you can continue.
    
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut13.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut13.JPG "")
 2.	Okay now connect a HDMI display (if not available you can use a HDMI TV, too) and a USB keyboard to OrangePI number 1. There is no need for a mouse since wse decided to don’t use the GUI version of Armbian.
 3.	Turn on power for OrangePI number 1. Armbian is booting now and after a few seconds you should see a login screen like in the picture below. If something is not working here, please contact us for assistence. 
 4.	Login as root with the password 1234. To do so enter “root” press enter and enter “1234” press enter. Linux usually don’t show anything while you type your password. That’s normal just type “1234” and press enter. 
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut14.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut14.JPG "")
 5.	Now you are requiered to change the root password. Select a strong password here with at least 13 digits and one special character. (Use the same password for all other OrangePI’s)
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut15.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut15.JPG "")
 6.	Now we are asked to setup a user and give it a password. Since Armbian is based on Debian/Ubuntu the user can obtain sudo rights. That’s why we need to choose a strong password here, too. But again you can use the same for all 8 OrangePI’s. As username we have choosen “skyminer”, you can choose another one if you want.
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut16.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut16.JPG "")
 7.	Now you are asked a couple of questions about the new user.  But you don’t need to provide them you can just hit enter and confirm with Y + enter at the end.
 ```
 Full name: <Enter>
@@ -153,20 +153,20 @@ Home phone: <Enter>
 Other: <Enter>
 Is the information correct: Y + <Enter>
 ```
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut17.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut17.JPG "")
 8.	Well done! We are logged in as root now. To make the board available for Putty/SSH and to use the webservices like the wallet we need to give it a static IP address. We do this in the next step…
-9.	In this last step (on the board it self) we give it an static IP. The router of the Skyminer always has the IP 192.168.0.1 which will also be both the satandard gateway as well as the DNS server for the OrangePI’s. We decided to give the boards the following IP addresses. 
+9.	In this last step (on the board it self) we give it an static IP. The router of the Skyminer always has the IP 192.168.178.1 which will also be both the satandard gateway as well as the DNS server for the OrangePI’s. We decided to give the boards the following IP addresses. 
 
 | Board Number| IP Address | 
 | ------------- |:-------------:| 
-| OrangePI 1 | 192.168.0.101|
-| OrangePI 2 | 192.168.0.102|
-| OrangePI 3 | 192.168.0.103|
-| OrangePI 4 | 192.168.0.104|
-| OrangePI 5 | 192.168.0.105|
-| OrangePI 6 | 192.168.0.106|
-| OrangePI 7 | 192.168.0.107|
-| OrangePI 8 | 192.168.0.108|
+| OrangePI 1 | 192.168.178.101|
+| OrangePI 2 | 192.168.178.102|
+| OrangePI 3 | 192.168.178.103|
+| OrangePI 4 | 192.168.178.104|
+| OrangePI 5 | 192.168.178.105|
+| OrangePI 6 | 192.168.178.106|
+| OrangePI 7 | 192.168.178.107|
+| OrangePI 8 | 192.168.178.108|
 
 Now let us change the IP of the board according to the list above. For this example we use OrangePI 1. 
 
@@ -175,10 +175,10 @@ In the terminal type and press enter afterwards:
 ```
 nano /etc/network/interfaces
 ```
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut18.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut18.JPG "")
 
 The network configuration file appears and we are about to make changes inside the green surrounded block (eth0):
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut19.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut19.JPG "")
 
 Now lets modify the entries like the following:
 
@@ -187,14 +187,14 @@ Now lets modify the entries like the following:
 allow-hotplug eth0			       stays as it is
 #no-auto-down eth0 	        insert # at the beginning
 iface eth0 inet static 	    delete dhcp and type static
-address 192.168.0.101 	     remove # at the beginning and type IP from the table above (ex:192.168.0.101)
+address 192.168.178.101 	     remove # at the beginning and type IP from the table above (ex:192.168.178.101)
 netmask 255.255.255.0	      remove # at the beginning
-gateway 192.168.0.1 	       remove # at the beginning
-dns-nameservers 192.168.0.1	remove # and replace 8.8.8.8  8.8.4.4 with 192.168.0.1
+gateway 192.168.178.1 	       remove # at the beginning
+dns-nameservers 192.168.178.1	remove # and replace 8.8.8.8  8.8.4.4 with 192.168.178.1
 ```
 
 Now your screen should look like this:
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut20.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut20.JPG "")
 
 The changes must be saved to be put into effect. We do this by pressing Ctrl+x, then type Y and press enter. After that the window automatically closes. Now you are back in the terminal and we must reboot. To do so copy paste the following into your terminal:
 
@@ -210,16 +210,16 @@ The preconfiguration of the OrangePI 1 is finished at this point.
 In order to be able to connect to the terminal of your OrangePI’s remotly to easily maintain them from your workstation we need to setup Putty. If you using a Linux workstation theres is usally nothing to do since most Linux derivats come with an SSH incorporated in the terminal shell. Mac users gonna need Keka but for the purpose of this tutorial we will only show how to use Putty on Windows. If you have problems installing Keka on Mac or use the SSH client on Linux workstations feel free to contact us for further assistence.
 Let’s get started:
 
-1.	Open the Putty file you have downloaded at the beginning of this tutorial. In the window that opens type the IP address of the first OrangePI board into the red circled area and replace the three green “X” with the board you want to connect which would be according to list of IP’s above 192.168.0.101 for OrangePI 1 (the master board). After that click the “Open” button.
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut21.JPG "")
+1.	Open the Putty file you have downloaded at the beginning of this tutorial. In the window that opens type the IP address of the first OrangePI board into the red circled area and replace the three green “X” with the board you want to connect which would be according to list of IP’s above 192.168.178.101 for OrangePI 1 (the master board). After that click the “Open” button.
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut21.JPG "")
  
 2.	The following security alert is normal and can be easily ignored. Since you created the certificate yourself and we think you are trusting your self 😉. Just click on “Yes”.
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut22.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut22.JPG "")
 
 3.	You now have a remote terminal shell on your OrangePI and all commands you run will be run on the OrangePI not on your local machine. 
 
 4.	You need to login to the OrangePI with your user and password. Type “root” when asked “Login as” and when you asked for the password type the one you have choosen when you first started the OrangePI. Be careful it’s the root password not the user password.
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/tut23.JPG "")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut23.JPG "")
 
 5.	Congratulations now you can fully control the OrangePI from your workstation. We are finsihed here and you can move to the next step.
 
@@ -227,7 +227,7 @@ Let’s get started:
 1.	Download the Install Script from our Github account. In the terminal type or copy paste the following command:
 
 ```
-cd && wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/SkyInstallScriptStart.sh
+cd && wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptStart.sh
 ```
 
 Alright lets do some magic. Run the script! In the terminal shell type or copy paste the following command:
@@ -256,7 +256,7 @@ BITCOIN
 ```
 1EH9Sw1JgnndJGVnUsQkhhiA6XBynqUFuQ
 ```
-![alt text](https://github.com/TheSKYpeople/SkyInstallScript/raw/master/img/donations.JPG "Please donate!")
+![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/donations.JPG "Please donate!")
 
 # Disclosure
 We are not affiliated with the Skycoin/Skywire team neither are we involved in the development of Skycoin/Skywire. We are a group of friends with a Skyminer who thought we can help likeminded people with the not so easy installation process. For the official Skycoin project, please head over to: https://www.skycoin.net

@@ -5,7 +5,7 @@
 ##### AS A PART OF SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT
 ##### This script starts all Skywire services again after a shutdown or reboot automatically.
 #######################################################################################################################################################################
-##### Version:		1.0  - Get the newest version at https://github.com/TheSKYpeople/SkyInstallScript
+##### Version:		1.0  - Get the newest version at https://github.com/dobby/SkyInstallScript
 #######################################################################################################################################################################
 ##### Team:			The SKYpeople (Email: TheSKYpeople@protonmail.com - Telegram: @TheSKYpeople)
 ##### Licence:		GNU General Public License v3.0
@@ -20,4 +20,4 @@ cd $GOPATH/bin
 ./manager -web-dir ${GOPATH}/src/github.com/skycoin/skywire/static/skywire-manager > /dev/null 2>&1 &
 
 ##### This starts the Skywire Monitor from the Master/Primary board (OrangePI 1)
-./node -connect-manager -manager-address 192.168.0.101:5998 -manager-web 192.168.0.101:8000  -address :5000 -web-port :6001 > /dev/null 2>&1 &
+./node -connect-manager -manager-address 192.168.178.101:5998 -manager-web 192.168.178.101:8000  -address :5000 -web-port :6001 > /dev/null 2>&1 &
