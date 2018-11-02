@@ -121,7 +121,7 @@ sudo apt-get install sshpass
 ###### In order to automatically install OrangePI 2-8 we need to login via SSH and run the SkyInstallScript...
 ###### ... for secondory boards.
 ###### Connect to OrangePI 2 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.102 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.102 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -129,7 +129,7 @@ sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 3 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.103 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.103 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -137,7 +137,7 @@ sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 4 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.104 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.104 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -145,7 +145,7 @@ sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 5 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.105 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.105 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/Warmat/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -153,7 +153,7 @@ sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 6 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.106 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.106 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -161,7 +161,7 @@ sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 7 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.107 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.107 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -169,7 +169,7 @@ sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 8 and run installation
-sshpass -p $RootPassword ssh pi@192.168.178.108 << EOF
+/usr/bin/sshpass -p $RootPassword ssh pi@192.168.178.108 << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
