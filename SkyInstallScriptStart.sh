@@ -95,25 +95,14 @@ echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
 . ~/.bashrc
 echo "GO succesfully installed!"
  
+echo "Installing git"
+sudo apt-get install git
 
- 
-##### INSTALL SKYCOIN
-echo "Installing Skycoin right now..."
-###### Obtain Skycoin source files from Github using GO
-go get github.com/skycoin/skycoin/...
-echo "Skycoin succesfully installed!"
-cd $GOPATH/src/github.com/skycoin/skycoin
-
-
-###### Launching Skycoin in the background
-echo "Launching Skycoin Now"
-make run > /dev/null 2>&1 &
-sleep 10
-echo "Skycoin is now running the wallet is synchronizing in the background"
- 
- 
 ##### INSTALL SKYWIRE
 echo "Installing Skywire right now..."
+
+mkdir -p $GOPATH/src/github.com/skycoin
+
 ###### Change the path for download
 cd $GOPATH/src/github.com/skycoin
 ###### Obtain Skywire source files from Github using GIT
@@ -123,7 +112,6 @@ cd $GOPATH/src/github.com/skycoin/skywire/cmd
 ###### Run Skywire installation
 go install ./...
 echo "Skywire succesfully installed!"
-
 
 ##### Now Lauching Skywire
 echo "Now lauching Skywire"
