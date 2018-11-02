@@ -14,8 +14,9 @@ echo "Powering down all skywire servers."
 
 poweroff()
 {
-  sshpass -p $RootPassword ssh pi@192.168.178.$1
+  sshpass -p $RootPassword ssh pi@192.168.178.$1 << EOF
   sudo poweroff
+  EOF
 }
 for i in 192.168.178.{102..108}; do poweroff $i; done
 
