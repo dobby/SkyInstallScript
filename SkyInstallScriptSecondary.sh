@@ -28,9 +28,7 @@
 ###### DON'T CHANGE ANYTHING BELOW THIS LINE (IF YOU DON'T KNOW WHAT YOU ARE DOING)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #######################################################################################################################################################################
 #######################################################################################################################################################################
- 
 
- 
 ##### UPDATING RESPOSITORY & UPGRADING OS
 echo "Updating respository and perfoming OS upgrade right now..."
 sudo apt-get update && sudo apt-get upgrade -y
@@ -60,7 +58,8 @@ sudo tar -xvf go1.10.2.linux-armv6l.tar.gz
 sudo rm go1.10.2.linux-armv6l.tar.gz
 
 ###### Move GO folder to it's destination directory
-sudo rm -rf /usr/local
+##### Remove any old go installations
+sudo rm -rf /usr/local/go
 sudo mv go /usr/local
 
 ###### Configure go enviroment variable
@@ -144,7 +143,6 @@ echo "Skywire node is now started and you can see it in on the Monitor."
 ###### Download start / stop scripts
 echo "Downloading autostart scripts from TheSKYpeople Github" 
 cd ~
-wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStartSkycoinWallet.sh
 wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStartSkywireSecondary.sh
 wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStopSkywire.sh
 

@@ -14,7 +14,13 @@ echo "Powering down all skywire servers."
 
 poweroff()
 {
-  sshpass -p $RootPassword ssh pi@192.168.178.$1 << EOF
+   sshpass -p $RootPassword ssh pi@192.168.178.102 << EOF
+   sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
+sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
+sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
+EOF
+
+}  sshpass -p $RootPassword ssh pi@192.168.178.$1 << EOF
   sudo poweroff
   EOF
 }
