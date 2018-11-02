@@ -47,20 +47,17 @@ echo "Installing GO right now..."
 echo "first removing old go version from the system"
 sudo apt-get remove golang
 sudo apt autoremove
+#Remove any old go installations
+sudo rm -rf /usr/local/go/
 
 ###### Downloading GO source from Google servers using CURL
-sudo curl -L https://storage.googleapis.com/golang/go1.10.2.linux-armv6l.tar.gz -o go1.10.2.linux-armv6l.tar.gz
+sudo wget https://storage.googleapis.com/golang/go1.10.2.linux-armv6l.tar.gz
 
 ###### Unzip the compressed GO source files
-sudo tar -xvf go1.10.2.linux-armv6l.tar.gz
+sudo tar -C /usr/local -xzf go1.10.2.linux-armv6l.tar.gz
 
 ###### Remove the downloaded compressed file (not needed anylonger!)
 sudo rm go1.10.2.linux-armv6l.tar.gz
-
-###### Move GO folder to it's destination directory
-##### Remove any old go installations
-sudo rm -rf /usr/local/go
-sudo mv go /usr/local
 
 ###### Configure go enviroment variable
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
