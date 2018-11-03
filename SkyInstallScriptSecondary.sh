@@ -91,24 +91,7 @@ echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
 ###### Reload GO paths
 . ~/.bashrc
 echo "GO succesfully installed!"
- 
 
- 
-##### INSTALL SKYCOIN
-echo "Installing Skycoin right now..."
-###### Obtain Skycoin source files from Github using GO
-go get github.com/skycoin/skycoin/...
-echo "Skycoin succesfully installed!"
-cd $GOPATH/src/github.com/skycoin/skycoin
-
-
-###### Launching Skycoin in the background
-echo "Launching Skycoin Now"
-make run > /dev/null 2>&1 &
-sleep 10
-echo "Skycoin is now running the wallet is synchronizing in the background"
- 
- 
 ##### INSTALL SKYWIRE
 echo "Installing Skywire right now..."
 ###### Change the path for download
