@@ -94,6 +94,7 @@ echo "GO succesfully installed!"
 
 ##### INSTALL SKYWIRE
 echo "Installing Skywire right now..."
+mkdir -p $GOPATH/src/github.com/skycoin
 ###### Change the path for download
 cd $GOPATH/src/github.com/skycoin
 ###### Obtain Skywire source files from Github using GIT
