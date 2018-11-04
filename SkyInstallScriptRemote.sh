@@ -3,7 +3,7 @@
 #######################################################################################################################################################################
 #######################################################################################################################################################################
 ##### SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT - REMOTE PART
-##### This script prepares the remote install to OrangePI 2-8 and runs the remote installation on those boards via SSH
+##### This script prepares the remote install to Raspberry PI 2-8 and runs the remote installation on those boards via SSH
 ##### For more detailed instructions please consult our tutorial.
 ##### For further assistence feel free to contact us! 
 #######################################################################################################################################################################
@@ -28,8 +28,8 @@
 #######################################################################################################################################################################
 #######################################################################################################################################################################
  
-##### ASK ROOT PASSWORD FOR ORANGEPI BOARDS (must be identical on all board to autoinstall board 2-8 using ssh)
-echo "In order to install the OrangePI boards 2-8 automatically, we need to login via SSH to run the install routine. Please make sure the root password is the same on all boards!"
+##### ASK ROOT PASSWORD FOR Raspberry PI BOARDS (must be identical on all board to autoinstall board 2-8 using ssh)
+echo "In order to install the Raspberry PI boards 2-8 automatically, we need to login via SSH to run the install routine. Please make sure the root password is the same on all boards!"
 # read password twice
 read -sp "Please enter root password: " RootPassword
 echo
@@ -48,60 +48,60 @@ done
 echo
  
 
-##### AUTO INSTALL SKYMINER SOFTWARE ON ORANGEPI'S 2-8 VIA SSH
-echo "Installation finished on OrangePI 1 (Master Board)."
-echo "Now automatically installing OrangePI 2-8 using SSH"
-echo "Please make sure that all OrangePIs are powered on!!!"
+##### AUTO INSTALL SKYMINER SOFTWARE ON Raspberry PI'S 2-8 VIA SSH
+echo "Installation finished on Raspberry PI 1 (Master Board)."
+echo "Now automatically installing Raspberry PI 2-8 using SSH"
+echo "Please make sure that all Raspberry PIs are powered on!!!"
 
 echo "We are now going to check if all the boards are up and reachable"
 is_alive_ping()
 {
   ping -q -c2  $1 > /dev/null
   if [ $? -eq 0 ]; then
-        echo "OrangePI with IP: $i is up."
+        echo "Raspberry PI with IP: $i is up."
   else
-        echo "We detected that at least one OrangePI is down:"
-        echo "OrangePI with IP: $i is DOWN (Please start or reboot!)."
-        read -p "Do you want to install Skywire on OrangePI $i (y/n)?" Continue
+        echo "We detected that at least one Raspberry PI is down:"
+        echo "Raspberry PI with IP: $i is DOWN (Please start or reboot!)."
+        read -p "Do you want to install Skywire on Raspberry PI $i (y/n)?" Continue
 
                 while [ $Continue != n ] && [ $Continue != y ];
                 do echo 'Please answer with y or n'
-                read -p "Do you want to install Skywire on OrangePI $i (y/n)? If y (yes) please make sure it is connected via ethernet and turned on in" Continue
+                read -p "Do you want to install Skywire on Raspberry PI $i (y/n)? If y (yes) please make sure it is connected via ethernet and turned on in" Continue
                 done
 
                 if [ $Continue = y ]; then
                         echo "Continuing the installation proccess......"
                         ping -q -c2 $i > /dev/null
                                 if [ $? -ne 0 ]; then
-                                echo "OrangePI $i is still not reachable. You can choose not to install on this board for now"
-                                read -p "Do you want to install Skywire on OrangePI $i at a later time (y/n)?"  InstallLater
+                                echo "Raspberry PI $i is still not reachable. You can choose not to install on this board for now"
+                                read -p "Do you want to install Skywire on Raspberry PI $i at a later time (y/n)?"  InstallLater
                                         while [ $InstallLater != n ] && [ $InstallLater != y ];
                                         do echo 'Please answer with y or n'
-                                        read -p "Do you want to install skywire on OrangePI $i at a later time (y/n)?"  InstallLater
+                                        read -p "Do you want to install skywire on Raspberry PI $i at a later time (y/n)?"  InstallLater
                                         done
 
                                         if [ $InstallLater = y ]; then echo "Continuing with the installation process....."
                                         elif [ $InstallLater = n ]
                                         then ping -q -c2 $i > /dev/null
                                                 if [ $? -ne 0 ]; then
-                                                        echo "OrangePI $i is still not reachable. You will have to install it later on this OrangePI. Continuing the installation process without this OrangePI......"
+                                                        echo "Raspberry PI $i is still not reachable. You will have to install it later on this Raspberry PI. Continuing the installation process without this Raspberry PI......"
                                                         else
-                                                echo "OrangePI with IP: $i is finally up. Continuing with the installation process......"
+                                                echo "Raspberry PI with IP: $i is finally up. Continuing with the installation process......"
                                                 fi
                                         fi
                                 else
-                                 echo "OrangePI with IP: $i is now up"
+                                 echo "Raspberry PI with IP: $i is now up"
                                 fi
 
                 elif [ $Continue = n ]; then
-                        echo "You are not going to install on OrangePI $i for now. Continuing the installation process without it......"
+                        echo "You are not going to install on Raspberry PI $i for now. Continuing the installation process without it......"
                 fi
   fi
 }
 for i in 192.168.178.{102..108}; do is_alive_ping $i; done
 
 
-###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
+###### Install sshpass in order to login to Raspberry PI boards 2-8 using ssh
 sudo apt-get install sshpass
 
 ##### Create a file where the trusted list of SSH keys will be stored
@@ -118,9 +118,9 @@ sudo apt-get install sshpass
 #ssh-keyscan -H 192.168.178.107 >> ~/.ssh/known_hosts
 #ssh-keyscan -H 192.168.178.108 >> ~/.ssh/known_hosts
 
-###### In order to automatically install OrangePI 2-8 we need to login via SSH and run the SkyInstallScript...
+###### In order to automatically install Raspberry PI 2-8 we need to login via SSH and run the SkyInstallScript...
 ###### ... for secondory boards.
-###### Connect to OrangePI 2 and run installation
+###### Connect to Raspberry PI 2 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.102 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
@@ -128,7 +128,7 @@ sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyIns
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
-###### Connect to OrangePI 3 and run installation
+###### Connect to Raspberry PI 3 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.103 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
@@ -136,7 +136,7 @@ sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyIns
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
-###### Connect to OrangePI 4 and run installation
+###### Connect to Raspberry PI 4 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.104 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
@@ -144,7 +144,7 @@ sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyIns
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
-###### Connect to OrangePI 5 and run installation
+###### Connect to Raspberry PI 5 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.105 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
@@ -152,7 +152,7 @@ sudo wget https://raw.githubusercontent.com/Warmat/SkyInstallScript/master/SkyIn
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
-###### Connect to OrangePI 6 and run installation
+###### Connect to Raspberry PI 6 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.106 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
@@ -160,7 +160,7 @@ sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyIns
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
-###### Connect to OrangePI 7 and run installation
+###### Connect to Raspberry PI 7 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.107 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh
@@ -168,7 +168,7 @@ sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyIns
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
-###### Connect to OrangePI 8 and run installation
+###### Connect to Raspberry PI 8 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.108 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
 rm SkyInstallScriptSecondary.sh

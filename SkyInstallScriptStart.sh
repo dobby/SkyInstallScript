@@ -3,7 +3,7 @@
 #######################################################################################################################################################################
 #######################################################################################################################################################################
 ##### SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT
-##### This script automatically installs the full Skycoin and Skywire software including all dependencies with one push of a button on all OrangePI boards.
+##### This script automatically installs the full Skycoin and Skywire software including all dependencies with one push of a button on all Raspberry PI boards.
 ##### To run this script type "sh SkyInstallScriptStart.sh" into a terminal and hit enter! 
 ##### For more detailed instructions please consult our tutorial.
 ##### For further assistence feel free to contact us! 
@@ -123,7 +123,7 @@ sleep 5
 ###### Change into installation path
 cd $GOPATH/bin
 ###### Starts Skywire Monitor service for the first time / after that command web interface of Monitor works
-###### This line is to start the monitor on the master node (OrangePI 1) only / Other Orange PIs requiere a different line with the master nodes IP!!!
+###### This line is to start the monitor on the master node (Raspberry PI 1) only / Other Orange PIs requiere a different line with the master nodes IP!!!
 ./node -connect-manager -manager-address :5998 -manager-web :8000 -discovery-address messenger.skycoin.net:5999 -address :5000 -web-port :6001 &> /dev/null 2>&1 &
 echo "Skywire monitor started." 
 echo "You can now open the monitor in your browser: http://192.168.178.101:8000"
@@ -137,7 +137,7 @@ cd ~
 wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStartSkywirePrimary.sh
 wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/ServiceStopSkywire.sh
 
-##### Executing InstallScript Part 2 (SkyInstallScriptRemote.sh) for installation of OrangePI 2-8 via SSH
+##### Executing InstallScript Part 2 (SkyInstallScriptRemote.sh) for installation of Raspberry PI 2-8 via SSH
 ###### Downloading Part 2
 cd ~
 wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptRemote.sh

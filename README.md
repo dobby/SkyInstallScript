@@ -41,7 +41,7 @@ Please download:
 
 | OS		| Download Link | 
 | ------------- |:-------------:| 
-| ARMBIAN for Orange PI Prime server version (Ubuntu based) | https://dl.armbian.com/orangepiprime/Ubuntu_xenial_next.7z |
+| ARMBIAN for Orange PI Prime server version (Ubuntu based) | https://dl.armbian.com/Raspberry PIprime/Ubuntu_xenial_next.7z |
 
 
 ### SSH Client PuTTY/Cyberduck  (for remote control) 
@@ -132,17 +132,17 @@ You might think now why only 4 and only the top ones? Simple answer we need an H
 
 ## First Login to Armbian
 1.	Connect the Ethernet cables of your miner, internet router and your workstation. If you haven’t it done already, please connect your Skyminer’s router (WAN port) with your internet router using an ethernet cable. Also connect the Orange PI’s to the routers switch. Because of the hardware design of the Skyminer we need to make one adjustment before we continue. In order to be able to connect with the miner via SSH on a workstation we would need a 9th Ethernet port on the miner but there are only 8 available and those are used for the 8 Orange PI boards. To solve this we have 2 options:
-   * Use a comman network switch or hub and disconnect on OrangePI from the miners switch. Then plug in the ethernet cable from the workstation to the switch and also plug the ethernet from the disconnected OrangePI into the switch. After that plug another ethernet cable into the switch/hub and connect it with the miners switch.
-   * If you don't have a switch/hub at hand disconnect one OrangePI and continue with the following installation steps. We provide an additional script later in this tutorial to install the disconnected board after the installation of the other OrangePI's is finished. As  soon as you have disconnected one board you can continue.
+   * Use a comman network switch or hub and disconnect on Raspberry PI from the miners switch. Then plug in the ethernet cable from the workstation to the switch and also plug the ethernet from the disconnected Raspberry PI into the switch. After that plug another ethernet cable into the switch/hub and connect it with the miners switch.
+   * If you don't have a switch/hub at hand disconnect one Raspberry PI and continue with the following installation steps. We provide an additional script later in this tutorial to install the disconnected board after the installation of the other Raspberry PI's is finished. As  soon as you have disconnected one board you can continue.
    
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut13.JPG "")
-2.	Okay now connect a HDMI display (if not available you can use a HDMI TV, too) and a USB keyboard to OrangePI number 1. There is no need for a mouse since wse decided to don’t use the GUI version of Armbian.
-3.	Turn on power for OrangePI number 1. Armbian is booting now and after a few seconds you should see a login screen like in the picture below. If something is not working here, please contact us for assistence. 
+2.	Okay now connect a HDMI display (if not available you can use a HDMI TV, too) and a USB keyboard to Raspberry PI number 1. There is no need for a mouse since wse decided to don’t use the GUI version of Armbian.
+3.	Turn on power for Raspberry PI number 1. Armbian is booting now and after a few seconds you should see a login screen like in the picture below. If something is not working here, please contact us for assistence. 
 4.	Login as root with the password 1234. To do so enter “root” press enter and enter “1234” press enter. Linux usually don’t show anything while you type your password. That’s normal just type “1234” and press enter. 
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut14.JPG "")
-5.	Now you are requiered to change the root password. Select a strong password here with at least 13 digits and one special character. (Use the same password for all other OrangePI’s)
+5.	Now you are requiered to change the root password. Select a strong password here with at least 13 digits and one special character. (Use the same password for all other Raspberry PI’s)
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut15.JPG "")
-6.	Now we are asked to setup a user and give it a password. Since Armbian is based on Debian/Ubuntu the user can obtain sudo rights. That’s why we need to choose a strong password here, too. But again you can use the same for all 8 OrangePI’s. As username we have choosen “skyminer”, you can choose another one if you want.
+6.	Now we are asked to setup a user and give it a password. Since Armbian is based on Debian/Ubuntu the user can obtain sudo rights. That’s why we need to choose a strong password here, too. But again you can use the same for all 8 Raspberry PI’s. As username we have choosen “skyminer”, you can choose another one if you want.
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut16.JPG "")
 7.	Now you are asked a couple of questions about the new user.  But you don’t need to provide them you can just hit enter and confirm with Y + enter at the end.
 ```
@@ -155,20 +155,20 @@ Is the information correct: Y + <Enter>
 ```
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut17.JPG "")
 8.	Well done! We are logged in as root now. To make the board available for Putty/SSH and to use the webservices like the wallet we need to give it a static IP address. We do this in the next step…
-9.	In this last step (on the board it self) we give it an static IP. The router of the Skyminer always has the IP 192.168.178.1 which will also be both the satandard gateway as well as the DNS server for the OrangePI’s. We decided to give the boards the following IP addresses. 
+9.	In this last step (on the board it self) we give it an static IP. The router of the Skyminer always has the IP 192.168.178.1 which will also be both the satandard gateway as well as the DNS server for the Raspberry PI’s. We decided to give the boards the following IP addresses. 
 
 | Board Number| IP Address | 
 | ------------- |:-------------:| 
-| OrangePI 1 | 192.168.178.101|
-| OrangePI 2 | 192.168.178.102|
-| OrangePI 3 | 192.168.178.103|
-| OrangePI 4 | 192.168.178.104|
-| OrangePI 5 | 192.168.178.105|
-| OrangePI 6 | 192.168.178.106|
-| OrangePI 7 | 192.168.178.107|
-| OrangePI 8 | 192.168.178.108|
+| Raspberry PI 1 | 192.168.178.101|
+| Raspberry PI 2 | 192.168.178.102|
+| Raspberry PI 3 | 192.168.178.103|
+| Raspberry PI 4 | 192.168.178.104|
+| Raspberry PI 5 | 192.168.178.105|
+| Raspberry PI 6 | 192.168.178.106|
+| Raspberry PI 7 | 192.168.178.107|
+| Raspberry PI 8 | 192.168.178.108|
 
-Now let us change the IP of the board according to the list above. For this example we use OrangePI 1. 
+Now let us change the IP of the board according to the list above. For this example we use Raspberry PI 1. 
 
 In the terminal type and press enter afterwards: 
 
@@ -202,26 +202,26 @@ The changes must be saved to be put into effect. We do this by pressing Ctrl+x, 
 sudo reboot now
 ```
 
-The preconfiguration of the OrangePI 1 is finished at this point.
+The preconfiguration of the Raspberry PI 1 is finished at this point.
 
-10.	Okay now repeat the same steps in this section (First Login to Armbian) on the other 3 plugged in microSD cards/OrangePI’s. When you are finished unplugged them and insert them into the bottom row of your OrangePI’s, plug in the left 4 microSD’s to the top row and do the same there. After that you are finished with this section.
+10.	Okay now repeat the same steps in this section (First Login to Armbian) on the other 3 plugged in microSD cards/Raspberry PI’s. When you are finished unplugged them and insert them into the bottom row of your Raspberry PI’s, plug in the left 4 microSD’s to the top row and do the same there. After that you are finished with this section.
 
 ## Setup Putty (Win) or Keka (MacOS)
-In order to be able to connect to the terminal of your OrangePI’s remotly to easily maintain them from your workstation we need to setup Putty. If you using a Linux workstation theres is usally nothing to do since most Linux derivats come with an SSH incorporated in the terminal shell. Mac users gonna need Keka but for the purpose of this tutorial we will only show how to use Putty on Windows. If you have problems installing Keka on Mac or use the SSH client on Linux workstations feel free to contact us for further assistence.
+In order to be able to connect to the terminal of your Raspberry PI’s remotly to easily maintain them from your workstation we need to setup Putty. If you using a Linux workstation theres is usally nothing to do since most Linux derivats come with an SSH incorporated in the terminal shell. Mac users gonna need Keka but for the purpose of this tutorial we will only show how to use Putty on Windows. If you have problems installing Keka on Mac or use the SSH client on Linux workstations feel free to contact us for further assistence.
 Let’s get started:
 
-1.	Open the Putty file you have downloaded at the beginning of this tutorial. In the window that opens type the IP address of the first OrangePI board into the red circled area and replace the three green “X” with the board you want to connect which would be according to list of IP’s above 192.168.178.101 for OrangePI 1 (the master board). After that click the “Open” button.
+1.	Open the Putty file you have downloaded at the beginning of this tutorial. In the window that opens type the IP address of the first Raspberry PI board into the red circled area and replace the three green “X” with the board you want to connect which would be according to list of IP’s above 192.168.178.101 for Raspberry PI 1 (the master board). After that click the “Open” button.
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut21.JPG "")
  
 2.	The following security alert is normal and can be easily ignored. Since you created the certificate yourself and we think you are trusting your self 😉. Just click on “Yes”.
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut22.JPG "")
 
-3.	You now have a remote terminal shell on your OrangePI and all commands you run will be run on the OrangePI not on your local machine. 
+3.	You now have a remote terminal shell on your Raspberry PI and all commands you run will be run on the Raspberry PI not on your local machine. 
 
-4.	You need to login to the OrangePI with your user and password. Type “root” when asked “Login as” and when you asked for the password type the one you have choosen when you first started the OrangePI. Be careful it’s the root password not the user password.
+4.	You need to login to the Raspberry PI with your user and password. Type “root” when asked “Login as” and when you asked for the password type the one you have choosen when you first started the Raspberry PI. Be careful it’s the root password not the user password.
 ![alt text](https://github.com/dobby/SkyInstallScript/raw/master/img/tut23.JPG "")
 
-5.	Congratulations now you can fully control the OrangePI from your workstation. We are finsihed here and you can move to the next step.
+5.	Congratulations now you can fully control the Raspberry PI from your workstation. We are finsihed here and you can move to the next step.
 
 # Installation
 1.	Download the Install Script from our Github account. In the terminal type or copy paste the following command:
@@ -236,7 +236,7 @@ Alright lets do some magic. Run the script! In the terminal shell type or copy p
 sh ~/SkyInstallScriptStart.sh
 ```
 
-2.	You will be asked for the root password you used for all boards. This is needed to automatically login to the OrangePI boards 2-8 and also install the software there automatically. Everyting is now done automatically you just need to wait a couple of minutes. You will be informed as soon the installation is finished.
+2.	You will be asked for the root password you used for all boards. This is needed to automatically login to the Raspberry PI boards 2-8 and also install the software there automatically. Everyting is now done automatically you just need to wait a couple of minutes. You will be informed as soon the installation is finished.
 
 3.	CONGRATULATIONS!!! Your Skyminer is now fully installed!
 

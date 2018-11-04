@@ -2,8 +2,8 @@
  
 #######################################################################################################################################################################
 #######################################################################################################################################################################
-##### SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT SECONDARY (FOR ORANGEPI BOARDS 2-8 ONLY!!!)
-##### This script automatically installs the full Skycoin and Skywire software including all dependencies via SSH on OrangePI boards 2-8.
+##### SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT SECONDARY (FOR Raspberry PI BOARDS 2-8 ONLY!!!)
+##### This script automatically installs the full Skycoin and Skywire software including all dependencies via SSH on Raspberry PI boards 2-8.
 ##### This script will be automatically executed by the SkyInstallScript.sh. There is no need to run this manually!
 ##### For more detailed instructions please consult our tutorial.
 ##### For further assistence feel free to contact us! 
@@ -116,7 +116,7 @@ sleep 5
 ###### Change into installation path
 cd $GOPATH/bin
 ###### Starts Skywire Monitor service for the first time / after that command web interface of Monitor works
-###### This line is to start the monitor on the slave nodes (OrangePI 2-8) only / Master Orange PIs requiere a different line!!!
+###### This line is to start the monitor on the slave nodes (Raspberry PI 2-8) only / Master Orange PIs requiere a different line!!!
 ./node -connect-manager -manager-address 192.168.178.101:5998 -manager-web 192.168.178.101:8000  -address :5000 -web-port :6001 > /dev/null 2>&1 &
 echo "Skywire node is now started and you can see it in on the Monitor." 
 
