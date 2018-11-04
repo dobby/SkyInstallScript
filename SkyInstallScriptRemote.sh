@@ -123,6 +123,7 @@ sudo apt-get install sshpass
 ###### Connect to Raspberry PI 2 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.102 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -132,6 +133,7 @@ EOF
 ###### Connect to Raspberry PI 3 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.103 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -141,6 +143,7 @@ EOF
 ###### Connect to Raspberry PI 4 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.104 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -150,6 +153,7 @@ EOF
 ###### Connect to Raspberry PI 5 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.105 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/Warmat/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -159,6 +163,7 @@ EOF
 ###### Connect to Raspberry PI 6 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.106 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -168,6 +173,7 @@ EOF
 ###### Connect to Raspberry PI 7 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.107 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh
@@ -177,6 +183,7 @@ EOF
 ###### Connect to Raspberry PI 8 and run installation
 sudo sshpass -p "$RootPassword" ssh pi@192.168.178.108 -oStrictHostKeyChecking=no << EOF
 echo "Removing any older versions of this install script"
+cd ~
 sudo rm SkyInstallScriptSecondary.sh
 sudo rm -rf   ServiceS*
 sudo wget https://raw.githubusercontent.com/dobby/SkyInstallScript/master/SkyInstallScriptSecondary.sh

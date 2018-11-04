@@ -110,6 +110,7 @@ echo "Skywire succesfully installed!"
 ###### Starts Skywire Monitor service for the first time / after that command web interface of Monitor works
 ###### This line is to start the monitor on the slave nodes (Raspberry PI 2-8) only / Master Orange PIs requiere a different line!!!
 echo "Killing any running instances"
+ps aux | grep node | grep -v grep | awk '{ print $2 }' | xargs kill -9
 ps aux | grep manager | grep -v grep | awk '{ print $2 }' | xargs kill -9
 
 cd $GOPATH/bin
