@@ -89,11 +89,13 @@ echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
 
 ###### Reload GO paths
-. ~/.bashrc
+source ~/.profile
 echo "GO succesfully installed!"
 
 ##### INSTALL SKYWIRE
 echo "Installing Skywire right now..."
+echo "Removing older versions"
+sudo rm -rf ~/skywire
 mkdir -p $GOPATH/src/github.com/skycoin
 ###### Change the path for download
 cd $GOPATH/src/github.com/skycoin
