@@ -63,7 +63,7 @@ sudo rm go1.10.2.linux-armv6l.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 
 ###### Reload the paths
-. ~/.profile
+source ~/.profile
 
 ###### Create GO directories
 mkdir -p $HOME/go
